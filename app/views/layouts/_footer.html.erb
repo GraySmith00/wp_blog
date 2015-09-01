@@ -1,0 +1,24 @@
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-3">
+      <p><a href="/"><%= image_tag "logo.png" %></a></p>
+    </div>
+    <div class="col-xs-6">
+      <nav>
+        <ul class="list-unstyled list-inline">
+          <li><%= link_to "Home", root_path, class: "ft-link" %></li>
+          <li><%= link_to "Blog", posts_path, class: "ft-link" %></li>
+          <li><%= link_to "Resources", pages_resources_path, class: "ft-link" %></li>
+          <li><%= link_to "Contact", pages_contact_path, class: "ft-link" %></li>
+          <li><%= link_to "Sign up now", root_path, class: "signup-link" %></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-xs-3">
+      <p class="pull-right">&copy; 2014 Brad Hussey</p>
+    </div>
+    </div>
+  </div>
+</footer>

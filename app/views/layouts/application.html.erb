@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WpTheme</title>
+ 
+  <%= csrf_meta_tags %>
+  
+  <!--   BOOTSTRAP CORE CSS -->
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+<!--   FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  
+<!--   GOOGLE FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+  
+<!--   CUSTOM CSS -->
+  <link href="assets/css/custom.css" rel="stylesheet">
+ 
+</head>
+<body>
+  
+  
+  
+  <%= render 'layouts/header' %>
+  
+  <% unless notice.nil? %>
+  <div class="app-alert">
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <div class="alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissable" role="alert">
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <% end %>
+  
+
+  <div class="wrapper">
+    <%= yield %>
+  </div>  
+
+  <%= render 'layouts/modal' %>
+  
+  <%= render 'layouts/footer' %>
+  
+  <!--   TYPEKIT -->
+<script src="//use.typekit.net/cuf6dza.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+  
+    <!-- BOOTSTRAP CORE JAVASCRIPT -->
+<!-- include javascript, jQuery FIRST -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
